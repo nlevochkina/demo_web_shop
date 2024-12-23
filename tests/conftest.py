@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-# from pages.page import Page
 
 from utils import attach
 
@@ -34,10 +33,8 @@ def setup_browser(request):
     options = Options()
 
     if is_run_locally:
-        # pass
         webdriver.Chrome(options=options)
     else:
-        # pass
         options.set_capability('browserName', 'chrome')
         options.set_capability('browserVersion', browser_version)
         options.page_load_strategy = 'eager'
@@ -68,7 +65,7 @@ def setup_browser(request):
 
 @pytest.fixture(scope='function')
 def open_browser(setup_browser):
-    # browser.config.timeout = 15000
+    browser.config.timeout = 15000
     browser.config.window_height = 1080
     browser.config.window_width = 1920
     browser.open('https://demowebshop.tricentis.com/')
