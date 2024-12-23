@@ -21,3 +21,23 @@ UI:
 * test_auth
 * test_choose_category
 * test_do_search
+
+### Allure
+
+Добавлен отчет о прохождении автотестов
+
+<img src="/media/allurereport.png">
+
+К тестам приложены артефакты: screenshot, video, browser logs, page source
+
+<img src="/media/allurereport2.png">
+
+### Jenkins
+
+Для запуска автотестов в Jenkins была настроена конфигурация
+
+<img src="/media/config.png">
+
+Для запуска автотестов в Jenkins нужно нажать на Build Now
+
+<img src="/media/tests.png">
