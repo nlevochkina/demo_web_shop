@@ -33,7 +33,7 @@ def setup_browser(request):
     options = Options()
 
     if is_run_locally:
-        webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(options=options)
     else:
         options.set_capability('browserName', 'chrome')
         options.set_capability('browserVersion', browser_version)
