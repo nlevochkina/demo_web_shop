@@ -1,7 +1,5 @@
 import allure
 import requests
-from allure_commons.types import AttachmentType
-from selene import browser, have
 
 
 @allure.title('Автотест на редирект со страницы чекаута')
