@@ -1,5 +1,4 @@
 import allure
-import requests
 import json
 from tests import actions
 from schemas.schemas import subscribe
@@ -11,8 +10,8 @@ def test_subscribe():
         actions.auth()
 
     with allure.step('Step 2. Отправляем запрос на подписку'):
-        response = requests.post(url='https://demowebshop.tricentis.com/subscribenewsletter',
-                                 data={'email': '1234@mail.ru'})
+        response = actions.demo_shop_api(method='post', url='subscribenewsletter',
+                                         data={'email': '1234@mail.ru'})
         assert response.status_code == 200
         content = response.text
         json_data = json.loads(content)

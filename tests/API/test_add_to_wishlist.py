@@ -1,5 +1,6 @@
 import allure
 import requests
+from tests import actions
 from schemas.schemas import add_to_wish_list
 from jsonschema.validators import validate
 
@@ -11,7 +12,7 @@ def test_add_to_wishlist():
     }
 
     with allure.step('Step 1. Добавляем товар в wishlist через API'):
-        response = requests.post(url='https://demowebshop.tricentis.com/addproducttocart/details/53/2', data=body)
+        response = actions.demo_shop_api(method='post', url='addproducttocart/details/53/2', data=body)
         body = response.json()
         validate(instance=body, schema=add_to_wish_list)
 

@@ -1,5 +1,6 @@
 import allure
 import requests
+from tests import actions
 from schemas.schemas import add_product
 from jsonschema.validators import validate
 
@@ -11,8 +12,7 @@ def test_add_to_cart_user():
     }
 
     with allure.step('Step 1. Добавляем товар в корзину через API'):
-        response = requests.post(url='https://demowebshop.tricentis.com/addproducttocart/details/31/1',
-                                 data=body)
+        response = actions.demo_shop_api(method='post', url='addproducttocart/details/31/1', data=body)
 
     with allure.step('Step 2. Провряем, что товар добавлен в корзину'):
         assert response.status_code == 200

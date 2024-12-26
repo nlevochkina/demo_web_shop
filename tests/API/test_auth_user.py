@@ -1,6 +1,6 @@
 import allure
 from tests import actions
-from selene import browser, have
+from pages.main_page import main_page
 
 
 @allure.title('Автотест на добавление товара в корзину авторизованным пользователем')
@@ -9,5 +9,5 @@ def test_auth_user():
         response = actions.auth()
 
     with allure.step('Step 3. Проверяем, что авторизация произошла'):
-        browser.element('.account').should(have.text('qaguru1@example.com'))
+        main_page.check_auth()
         assert response.status_code == 302
