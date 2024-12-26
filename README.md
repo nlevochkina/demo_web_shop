@@ -41,3 +41,9 @@ UI:
 Для запуска автотестов в Jenkins нужно нажать на Build Now
 
 <img src="/media/tests.png">
+
+### Telegram
+
+Отчет о пройденных тестах приходит в Telegram:
+
+<img src="/media/tg.png">
