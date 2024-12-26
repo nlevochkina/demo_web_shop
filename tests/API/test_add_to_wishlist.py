@@ -1,7 +1,7 @@
 import allure
 import requests
 from schemas.schemas import add_to_wish_list
-from jsonschema import validate
+from jsonschema.validators import validate
 
 
 @allure.title('Автотест на добавление товара в wishlist')

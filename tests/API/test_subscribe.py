@@ -3,7 +3,7 @@ import requests
 import json
 from tests import actions
 from schemas.schemas import subscribe
-from jsonschema import validate
+from jsonschema.validators import validate
 
 
 def test_subscribe():
