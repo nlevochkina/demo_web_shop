@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-
+from tests.config import BASE_URL
 from utils import attach
 
 
@@ -68,4 +68,4 @@ def open_browser(setup_browser):
     browser.config.timeout = 15000
     browser.config.window_height = 1080
     browser.config.window_width = 1920
-    browser.open('https://demowebshop.tricentis.com/')
+    browser.open(BASE_URL)

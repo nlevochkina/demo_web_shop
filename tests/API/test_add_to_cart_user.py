@@ -1,5 +1,4 @@
 import allure
-import requests
 from tests import actions
 from schemas.schemas import add_product
 from jsonschema.validators import validate
@@ -8,7 +7,9 @@ from jsonschema.validators import validate
 @allure.title('Автотест на добавление товара в корзину неавторизованным пользователем')
 def test_add_to_cart_user():
     body = {
-        "success": True,
+        'success': True,
+        'message': 'The product has been added to your shopping cart',
+        'updatetopcartsectionhtml': '1'
     }
 
     with allure.step('Step 1. Добавляем товар в корзину через API'):

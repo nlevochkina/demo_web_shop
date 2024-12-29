@@ -1,4 +1,4 @@
-from selene import browser, be
+from selene import browser
 
 
 class ProductPage:

@@ -4,6 +4,8 @@ from pages.main_page import main_page
 
 @allure.title('Авторизация на сайте')
 def test_auth(open_browser):
+    """Проверяем, что авторизация работает"""
+
     with allure.step('Step 1. Нажимаем кнопку Log in'):
         main_page.login()
 

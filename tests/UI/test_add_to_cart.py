@@ -6,11 +6,13 @@ from pages.card_page import card_page
 
 @allure.title('Добавление товара в корзину')
 def test_add_to_cart(open_browser):
+    """Проверяем, что товар добавляется в корзину"""
+
     with allure.step('Step 1. Выполняем поиск товара'):
         search_page.do_search('camera')
 
     with allure.step('Step 3. Выполняем поиск товара'):
-        search_page.open_product('a[href="/digital-slr-camera"]')
+        search_page.open_product('.product-title')
 
     with allure.step('Step 3. Добавляем товар в корзину'):
         product_page.add_to_cart()

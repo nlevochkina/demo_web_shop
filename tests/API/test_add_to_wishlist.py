@@ -1,5 +1,4 @@
 import allure
-import requests
 from tests import actions
 from schemas.schemas import add_to_wish_list
 from jsonschema.validators import validate
@@ -8,7 +7,9 @@ from jsonschema.validators import validate
 @allure.title('Автотест на добавление товара в wishlist')
 def test_add_to_wishlist():
     body = {
-        "success": True,
+        'success': True,
+        'message': 'The product has been added to your wishlist',
+        'updatetopwishlistsectionhtml': '1'
     }
 
     with allure.step('Step 1. Добавляем товар в wishlist через API'):

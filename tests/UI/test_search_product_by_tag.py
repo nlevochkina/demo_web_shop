@@ -5,6 +5,8 @@ from pages.search_page import search_page
 
 @allure.title('Поиск товара по тегу')
 def test_search_product_by_tag(open_browser):
+    """Проверяем выполнение поиска товара по тегу"""
+
     with allure.step('Step 1. Кликаем по тегу awesome'):
         main_page.click_on_tag()
 

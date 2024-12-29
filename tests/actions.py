@@ -1,14 +1,16 @@
 import requests
 from selene import browser, be
+from tests.config import BASE_URL
+
 
 def auth():
-    response = requests.post(url='https://demowebshop.tricentis.com/login',
+    response = requests.post(url=BASE_URL,
                              data={'email': 'qaguru1@example.com', 'password': '123456', 'RememberMe': False},
                              allow_redirects=False)
     cookie = response.cookies.get('NOPCOMMERCE.AUTH')
-    browser.open('https://demowebshop.tricentis.com/')
+    browser.open(BASE_URL)
     browser.driver.add_cookie({'name': 'NOPCOMMERCE.AUTH', 'value': cookie})
-    browser.open('https://demowebshop.tricentis.com/')
+    browser.open(BASE_URL)
     return response
 
 
@@ -19,8 +21,7 @@ def search(value):
 
 
 def demo_shop_api(method, url, **kwargs):
-    base_url = "https://demowebshop.tricentis.com/"
-    new_url = base_url + url
+    new_url = BASE_URL + url
     method = method.upper()
     response = requests.request(method=method, url=new_url, **kwargs)
     return response
